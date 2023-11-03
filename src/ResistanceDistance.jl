@@ -4,7 +4,7 @@ using Graphs: laplacian_matrix,nv
 using LinearAlgebra: pinv
 
 function resistance_distance_matrix(g)
-    il=piv(laplacian_matrix(g))
+    il=pinv(laplacian_matrix(g))
     out=zeros(Float64,(nv(g),nv(g)))
     for i in axes(out,1)
         if j>=i
