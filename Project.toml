@@ -1,0 +1,13 @@
+name = "ResistanceDistance"
+uuid = "6d9c698a-143c-4d19-893a-b951e9cb8478"
+authors = ["Jean F Du Plessis"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
