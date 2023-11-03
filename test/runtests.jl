@@ -1,6 +1,9 @@
 using ResistanceDistance,Graphs
 using Test
 
+# Define a custom tolerance
+tolerance = 1e-6
+
 @testset "ResistanceDistance.jl" begin
     @testset "resistance_distance_matrix function" begin
         # Create a test graph
@@ -10,13 +13,13 @@ using Test
         matrix = resistance_distance_matrix(g)
 
         # Define the expected result
-        expected = [0.0   0.7500000000000001  0.7499999999999999  0.9999999999999998
-        0.7500000000000001  0.0   0.9999999999999999   0.7499999999999996
-        0.7499999999999999  0.9999999999999999   0.0   0.7499999999999999
-        0.9999999999999998   0.7499999999999996  0.7499999999999999  0.0]
+        expected = [0.0   0.75  0.75  1.0
+        0.75  0.0   1.0   0.75
+        0.75  1.0   0.0   0.75
+        1.0   0.75  0.75  0.0]
 
         # Test that the function returns the expected result
-        @test matrix == expected
+        @test isapprox(matrix, expected, atol=tolerance)
     end
 
     @testset "resistance_distance function" begin
@@ -30,6 +33,6 @@ using Test
         expected = 0.75
 
         # Test that the function returns the expected result
-        @test distance == expected
+        @test isapprox(distance, expected, atol=tolerance)
     end
 end
