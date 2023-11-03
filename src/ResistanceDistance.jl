@@ -3,6 +3,8 @@ module ResistanceDistance
 using Graphs: laplacian_matrix,nv
 using LinearAlgebra: pinv,det
 
+export resistance_distance_matrix,resistance_distance
+
 """
     resistance_distance_matrix(g)
 
