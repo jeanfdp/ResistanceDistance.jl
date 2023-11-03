@@ -8,7 +8,7 @@ To install the package, use the following command in the Julia package manager:
 
 ```julia
 using Pkg
-Pkg.add("https://github.com/jeanfdp/ResistanceDistance.jl")
+Pkg.add(url="https://github.com/jeanfdp/ResistanceDistance.jl")
 ```
 
 ## Usage
